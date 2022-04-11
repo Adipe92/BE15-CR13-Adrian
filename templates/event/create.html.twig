@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+	<div class="contaner">
+		<h2 class="text-center m-5">Add Event</h2>
+        <div class="m-5">
+        {{form_start(form)}}
+		{{form_widget(form)}}
+		{{form_end(form)}}
+        </div>
+		
+	</div>
+
+{% endblock %}

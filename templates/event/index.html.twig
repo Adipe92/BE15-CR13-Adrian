@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+	<div class="hero-bg">
+		<img src="{{asset('assets/pictures/logo_co.jpg')}}" alt="pic">
+	</div>
+	<h1 class="text-center m-5">Welcome to our Global Company Event website</h1>
+	<div class="container">
+		<h3 class="text-center m-3">Look into our events</h3>
+		<div class="row mt-5">
+			<div class="col-lg-4">
+				<div class="card" style="width: 18rem;">
+					<img src="..." class="card-img-top" alt="...">
+					<div class="card-body">
+						<h4>Name</h4>
+						<p>Category:</p>
+                        <p>Date:</p>
+						<p class="card-text">Description dfsdfsfsfsdfsdfs</p>
+						<div class="d-flex justify-content-between">
+							<a href="/details" class="btn btn-success">Details</a>
+							<a href="/edit" class="btn btn-secondary">Edit</a>
+							<a href="/delete" class="btn btn-danger">Delete</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{# {% for event in events %}{% endfor %} #}
+
+	</div>
+
+{% endblock %}
