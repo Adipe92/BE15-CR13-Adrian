@@ -36,7 +36,7 @@ class EventController extends AbstractController
 
  // taking the data from the inputs with the getData() function and assign it to the $todo variable
            $event = $form->getData();
-           $event->setCreateDate($now);  // this field is not included in the form so we set the today date
+           $event->setEventDate($now);  // this field is not included in the form so we set the today date
            $em = $doctrine->getManager();
            $em->persist($event);
            $em->flush();
