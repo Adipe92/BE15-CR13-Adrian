@@ -6,27 +6,39 @@
 	<h1 class="text-center m-5">Welcome to our Global Company Event website</h1>
 	<div class="container">
 		<h3 class="text-center m-3">Look into our events</h3>
-		<div class="row mt-5">
-			<div class="col-lg-4">
-				<div class="card" style="width: 18rem;">
-					<img src="..." class="card-img-top" alt="...">
-					<div class="card-body">
-						<h4>Name</h4>
-						<p>Category:</p>
-                        <p>Date:</p>
-						<p class="card-text">Description dfsdfsfsfsdfsdfs</p>
-						<div class="d-flex justify-content-between">
-							<a href="/details" class="btn btn-success">Details</a>
-							<a href="/edit" class="btn btn-secondary">Edit</a>
-							<a href="/delete" class="btn btn-danger">Delete</a>
+		<div class="d-flex">
+			<div class="row container ms-2 mt-5">
+				{% for event in events %}
+					<div class='mt-3 col-lg-4 col-md-6 col-sm-12'>
+						<div class="card" style="width: 18rem;">
+							<img src="{{event.picture}}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h4>#
+									{{event.id}}</h4>
+								<h4>{{event.eventName}}</h4>
+								<p>
+									<b>Category:</b>
+									{{event.type}}</p>
+								<p>
+									<b>Date:</b>
+									{{event.eventDate|date('F j, Y, g:i a')}}</p>
+								<p class="card-text">
+									<b>Description:</b>
+								</p>
+								<p>{{event.description}}</p>
+								<div class="d-flex justify-content-between">
+									<a href="/details/{{event.id}}" class="btn btn-success">Details</a>
+									<a href="/edit/{{event.id}}" class="btn btn-secondary">Edit</a>
+									<a href="/delete/{{event.id}}" class="btn btn-danger">Delete</a>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
+				{% endfor %}
+			</div>
+			<div class="ms-5">
+				<img src="{{ asset('pictures/baner.jpg') }}" style="width: 200px;" alt="pic">
 			</div>
 		</div>
-
-		{# {% for event in events %}{% endfor %} #}
-
 	</div>
-
-{% endblock %}
+</div>{% endblock %}
